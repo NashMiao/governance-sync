@@ -1,4 +1,4 @@
-package com.github.ontio.GovernanceSync;
+package com.github.ontio.governancesync;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
