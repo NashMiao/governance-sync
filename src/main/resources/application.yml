@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    database: MYSQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/governance?serverTimezone=UTC
+    username: root
+    password: ${MYSQL_TEST_PASSWORD}
+    initialization-mode: always
+
+mybatis:
+  check-config-location: true
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.example.mybaitsdemo.model
+  type-handlers-package: com.example.mybaitsdemo.handler
+  configuration:
+    map-underscore-to-camel-case: true
+
+config:
+  main:
+    node: http://dappnode${random.int[1,5]}.ont.io:20334
+  polaris:
+    node: http://polaris${random.int[1,6]}.ont.io:20334
+  candidate:
+    info: https://ont.io/api/v1/candidate/info/All
