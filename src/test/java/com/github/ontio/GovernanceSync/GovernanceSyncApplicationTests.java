@@ -23,7 +23,7 @@ public class GovernanceSyncApplicationTests {
 
     @Test
     public void getNodeInfoLists() throws Exception {
-        this.mockMvc.perform(get("/v1/node/infoLists")).andDo(print()).andExpect(status().isOk());
+        this.mockMvc.perform(get("/v1/nodes/infoLists")).andDo(print()).andExpect(status().isOk());
     }
 
 }

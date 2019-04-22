@@ -11,7 +11,7 @@ Query candidate node's information.
 - request
 
 ```bash
-curl -i http://localhost:8080/v1/node/infoLists
+curl -i http://localhost:8080/v1/nodes/infoLists
 ```
 
 - response
