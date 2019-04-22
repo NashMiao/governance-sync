@@ -17,13 +17,13 @@ public class NodeController {
     @Autowired
     private NodeInfoMapper nodeInfoMapper;
 
-    @RequestMapping(value = "/infoList", method = RequestMethod.GET)
+    @RequestMapping(value = "/infoLists", method = RequestMethod.GET)
     public Result getInfoList() {
         try {
             List<NodeInfo> nodeInfos = nodeInfoMapper.selectAll();
-            return Result.builder().action("getInfoList").version("v1").error(0L).desc("").result(nodeInfos).build();
+            return Result.builder().code(0L).msg("Success").result(nodeInfos).build();
         } catch (Exception e) {
-            return Result.builder().action("getInfoList").version("v1").error(1L).desc(e.toString()).result("").build();
+            return Result.builder().code(1L).msg(e.toString()).result("").build();
         }
     }
 }

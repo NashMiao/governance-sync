@@ -79,7 +79,7 @@ public class GovernanceSyncTasks {
 
     private void matchNodeName(Vector<NodeInfo> nodeInfos) {
         RestTemplate restTemplate = new RestTemplate();
-        Result result = restTemplate.getForObject(paramsConfig.CANDIDATE_INFO, Result.class);
+        QueryResult result = restTemplate.getForObject(paramsConfig.CANDIDATE_INFO, QueryResult.class);
         TypeReference<Vector<Candidate>> typeRef = new TypeReference<Vector<Candidate>>() {
         };
         Vector<Candidate> candidates = objectMapper.convertValue(Objects.requireNonNull(result).getResult(), typeRef);

@@ -1,7 +1,6 @@
 package com.github.ontio.governancesync.core;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,18 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Result {
-    @JsonProperty("Action")
-    public String action;
+    public Long code;
 
-    @JsonProperty("Error")
-    public Long error;
+    public String msg;
 
-    @JsonProperty("Desc")
-    public String desc;
-
-    @JsonProperty("Version")
-    public String version;
-
-    @JsonProperty("Result")
     public Object result;
 }
