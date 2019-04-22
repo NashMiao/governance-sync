@@ -18,7 +18,15 @@ mybatis:
 config:
   main:
     node: http://dappnode${random.int[1,5]}.ont.io:20334
+    host: http://dappnode
+    abs_path: .ont.io:20334
+    node_index: 1
+    node_count: 4
   polaris:
     node: http://polaris${random.int[1,6]}.ont.io:20334
+    host: http://polaris
+    abs_path: .ont.io:20334
+    node_index: 1
+    node_count: 5
   candidate:
     info: https://ont.io/api/v1/candidate/info/All

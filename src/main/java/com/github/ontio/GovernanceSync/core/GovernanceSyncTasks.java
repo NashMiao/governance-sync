@@ -7,9 +7,8 @@ import com.github.ontio.core.governance.PeerPoolItem;
 import com.github.ontio.governancesync.config.ParamsConfig;
 import com.github.ontio.governancesync.mapper.NodeInfoMapper;
 import com.github.ontio.governancesync.model.NodeInfo;
-import com.github.ontio.network.exception.ConnectorException;
-import com.github.ontio.sdk.exception.SDKException;
 import lombok.extern.slf4j.Slf4j;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -17,7 +16,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
 import java.util.*;
 
 
@@ -61,9 +59,19 @@ public class GovernanceSyncTasks {
             nodes.sort((v1, v2) -> Long.compare(v2.getInitPos() + v2.getTotalPos(), v1.getInitPos() + v1.getTotalPos()));
             matchNodeName(nodes);
             updateNodesTable(nodes);
-        } catch (ConnectorException | IOException | SDKException e) {
+        } catch (Exception e) {
             log.error("getPeerPoolMap failed: {}", e.getMessage());
+            changeMainNetNode();
+            log.info("change remote node to: {}", paramsConfig.MAIN_NODE);
         }
+    }
+
+    private void changeMainNetNode() {
+        paramsConfig.MAIN_NODE_INDEX++;
+        if (paramsConfig.MAIN_NODE_INDEX >= paramsConfig.MAIN_NODE_COUNT) {
+            paramsConfig.MAIN_NODE_INDEX = 1;
+        }
+        paramsConfig.MAIN_NODE = paramsConfig.MAIN_NODE_HOST + paramsConfig.MAIN_NODE_INDEX + paramsConfig.MAIN_NODE_ABS_PATH;
     }
 
     private void updateNodesTable(Vector<NodeInfo> nodes) {
