@@ -63,9 +63,10 @@ public class GovernanceSyncTasks {
             nodes = matchNodeName(nodeInfos);
             updateNodesTable(nodes);
         } catch (Exception e) {
-            log.error("getPeerPoolMap failed: {}", e.getMessage());
+            log.error("Get peer pool map failed: {}", e.getMessage());
             changeMainNetNode();
-            log.info("change remote node to: {}", paramsConfig.MAIN_NODE);
+            log.info("Change remote node to: {}", paramsConfig.MAIN_NODE);
+            fetchNodeList();
         }
     }
 
@@ -76,7 +77,7 @@ public class GovernanceSyncTasks {
             BigDecimal currentPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getTotalPos()));
             BigDecimal targetPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getMaxAuthorize()));
             node.setCurrentStake(currentPos.toString());
-            node.setProgress(currentPos.divide(targetPos, RoundingMode.DOWN).toString() + "%");
+            node.setProgress(currentPos.multiply(new BigDecimal(100)).divide(targetPos, 2, RoundingMode.HALF_UP) + "%");
             node.setDetailUrl(paramsConfig.DETAIL_URL + node.getPublicKey());
             nodes.set(i, node);
         }

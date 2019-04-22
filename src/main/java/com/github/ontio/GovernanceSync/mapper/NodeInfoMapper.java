@@ -81,8 +81,7 @@ public interface NodeInfoMapper {
     })
     int updateByPrimaryKey(NodeInfo record);
 
-    // Self-defined SQL
-
+    // Self-defined SQL.
     @Delete({"delete from t_node_info"})
     int deleteAll();
 

@@ -43,6 +43,7 @@ public class NodeInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    // Self-defined construct method.
     public NodeInfo(PeerPoolItem item) {
         name = "";
         nodeIndex = (long) item.index;
