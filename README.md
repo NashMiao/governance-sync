@@ -6,21 +6,21 @@ This project is built for Ontology network. Anyone can use it's RESTful interfac
 
 ## Interface
 
+Query candidate node's information.
+
 - request
 
 ```bash
-curl -i http://localhost:8080/api/v1/node/infoList
+curl -i http://localhost:8080/v1/node/infoLists
 ```
 
 - response
 
 ```json
 {
-  "Action": "getInfoList",
-  "Error": 0,
-  "Desc": "",
-  "Version": "v1",
-  "Result": [
+  "code": 0,
+  "msg": "Success",
+  "result": [
     {
       "id": 1,
       "name": "Megrez",
