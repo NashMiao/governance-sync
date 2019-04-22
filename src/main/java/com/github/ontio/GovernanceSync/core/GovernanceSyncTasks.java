@@ -60,10 +60,21 @@ public class GovernanceSyncTasks {
             }
             nodes.sort((v1, v2) -> Long.compare(v2.getInitPos() + v2.getTotalPos(), v1.getInitPos() + v1.getTotalPos()));
             matchNodeName(nodes);
-            nodes.forEach(e->nodeInfoMapper.insert(e));
+            updateNodesTable(nodes);
         } catch (ConnectorException | IOException | SDKException e) {
             log.error("getPeerPoolMap failed: {}", e.getMessage());
         }
+    }
+
+    private void updateNodesTable(Vector<NodeInfo> nodes) {
+        if (nodes.size() == 0) {
+            log.warn("updateNodesInfo failed, nodes vector is empty.");
+            return;
+        }
+        int result = nodeInfoMapper.deleteAll();
+        log.info("updateNodesTable: delete {} nodes info.", result);
+        nodes.forEach(e -> nodeInfoMapper.insert(e));
+        log.info("updateNodesTable: insert {} nodes info.", nodes.size());
     }
 
     private void matchNodeName(Vector<NodeInfo> nodeInfos) {

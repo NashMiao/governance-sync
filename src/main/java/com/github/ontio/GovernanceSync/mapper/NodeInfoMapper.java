@@ -72,4 +72,16 @@ public interface NodeInfoMapper {
         "where id = #{id,jdbcType=BIGINT}"
     })
     int updateByPrimaryKey(NodeInfo record);
+
+    @Delete({"delete from t_node_info"})
+    int deleteAll();
+
+    @Select({
+        "select",
+        "id, name, node_index, public_key, address, status, init_pos, total_pos, max_authorize, ",
+        "node_proportion",
+        "from t_node_info"
+    })
+    List<NodeInfo> selectAll();
+
 }
