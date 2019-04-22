@@ -17,6 +17,14 @@ public class NodeInfo implements Serializable {
 
     private String name;
 
+    private int rank;
+
+    private String currentStake;
+
+    private String progress;
+
+    private String detailUrl;
+
     private Long nodeIndex;
 
     private String publicKey;

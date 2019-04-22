@@ -16,7 +16,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
+
+import static java.util.stream.IntStream.range;
 
 
 @Slf4j
@@ -53,16 +57,29 @@ public class GovernanceSyncTasks {
                 HashMap<String, Object> attribute = objectMapper.readValue(result, typeRef);
                 NodeInfo node = new NodeInfo(item);
                 node.setMaxAuthorize(attribute.get("maxAuthorize").toString());
-                node.setNodeProportion(String.valueOf(100 - (int) attribute.get("t1PeerCost")));
+                node.setNodeProportion((100 - (int) attribute.get("t1PeerCost")) + "%");
                 nodes.add(node);
             }
             nodes.sort((v1, v2) -> Long.compare(v2.getInitPos() + v2.getTotalPos(), v1.getInitPos() + v1.getTotalPos()));
+            calcNodeInfo(nodes);
             matchNodeName(nodes);
             updateNodesTable(nodes);
         } catch (Exception e) {
             log.error("getPeerPoolMap failed: {}", e.getMessage());
             changeMainNetNode();
             log.info("change remote node to: {}", paramsConfig.MAIN_NODE);
+        }
+    }
+
+    private void calcNodeInfo(Vector<NodeInfo> nodes) {
+        for (int i = 0; i < nodes.size(); i++) {
+            NodeInfo node = nodes.get(i);
+            node.setRank(i + 1);
+            BigDecimal currentPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getTotalPos()));
+            BigDecimal targetPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getMaxAuthorize()));
+            node.setCurrentStake(currentPos.toString());
+            node.setProgress(currentPos.divide(targetPos, RoundingMode.DOWN).toString() + "%s");
+            node.setDetailUrl(paramsConfig.DETAIL_URL + node.getPublicKey());
         }
     }
 

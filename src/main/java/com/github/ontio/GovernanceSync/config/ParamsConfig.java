@@ -39,4 +39,7 @@ public class ParamsConfig {
     @Value("${config.candidate.info}")
     public String CANDIDATE_INFO;
 
+    @Value("${config.detail_url}")
+    public String DETAIL_URL;
+
 }

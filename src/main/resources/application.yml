@@ -30,3 +30,4 @@ config:
     node_count: 5
   candidate:
     info: https://ont.io/api/v1/candidate/info/All
+  detail_url: https://explorer.ont.io/nodes/detail/
