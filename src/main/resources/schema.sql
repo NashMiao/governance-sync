@@ -1,5 +1,4 @@
-DROP TABLE IF EXISTS t_node_info;
-CREATE TABLE t_node_info
+CREATE TABLE IF NOT EXISTS t_node_info
 (
     id              BIGINT      NOT NULL AUTO_INCREMENT,
     name            VARCHAR(64) NOT NULL DEFAULT '',
