@@ -5,16 +5,16 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="node_rank" jdbcType="INTEGER" property="nodeRank" />
-    <result column="current_stake" jdbcType="VARCHAR" property="currentStake" />
+    <result column="current_stake" jdbcType="BIGINT" property="currentStake" />
     <result column="progress" jdbcType="VARCHAR" property="progress" />
     <result column="detail_url" jdbcType="VARCHAR" property="detailUrl" />
-    <result column="node_index" jdbcType="BIGINT" property="nodeIndex" />
+    <result column="node_index" jdbcType="INTEGER" property="nodeIndex" />
     <result column="public_key" jdbcType="VARCHAR" property="publicKey" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="init_pos" jdbcType="BIGINT" property="initPos" />
     <result column="total_pos" jdbcType="BIGINT" property="totalPos" />
-    <result column="max_authorize" jdbcType="VARCHAR" property="maxAuthorize" />
+    <result column="max_authorize" jdbcType="BIGINT" property="maxAuthorize" />
     <result column="node_proportion" jdbcType="VARCHAR" property="nodeProportion" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -157,7 +157,7 @@
         #{nodeRank,jdbcType=INTEGER},
       </if>
       <if test="currentStake != null">
-        #{currentStake,jdbcType=VARCHAR},
+        #{currentStake,jdbcType=BIGINT},
       </if>
       <if test="progress != null">
         #{progress,jdbcType=VARCHAR},
@@ -166,7 +166,7 @@
         #{detailUrl,jdbcType=VARCHAR},
       </if>
       <if test="nodeIndex != null">
-        #{nodeIndex,jdbcType=BIGINT},
+        #{nodeIndex,jdbcType=INTEGER},
       </if>
       <if test="publicKey != null">
         #{publicKey,jdbcType=VARCHAR},
@@ -184,7 +184,7 @@
         #{totalPos,jdbcType=BIGINT},
       </if>
       <if test="maxAuthorize != null">
-        #{maxAuthorize,jdbcType=VARCHAR},
+        #{maxAuthorize,jdbcType=BIGINT},
       </if>
       <if test="nodeProportion != null">
         #{nodeProportion,jdbcType=VARCHAR},
@@ -210,7 +210,7 @@
         node_rank = #{record.nodeRank,jdbcType=INTEGER},
       </if>
       <if test="record.currentStake != null">
-        current_stake = #{record.currentStake,jdbcType=VARCHAR},
+        current_stake = #{record.currentStake,jdbcType=BIGINT},
       </if>
       <if test="record.progress != null">
         progress = #{record.progress,jdbcType=VARCHAR},
@@ -219,7 +219,7 @@
         detail_url = #{record.detailUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.nodeIndex != null">
-        node_index = #{record.nodeIndex,jdbcType=BIGINT},
+        node_index = #{record.nodeIndex,jdbcType=INTEGER},
       </if>
       <if test="record.publicKey != null">
         public_key = #{record.publicKey,jdbcType=VARCHAR},
@@ -237,7 +237,7 @@
         total_pos = #{record.totalPos,jdbcType=BIGINT},
       </if>
       <if test="record.maxAuthorize != null">
-        max_authorize = #{record.maxAuthorize,jdbcType=VARCHAR},
+        max_authorize = #{record.maxAuthorize,jdbcType=BIGINT},
       </if>
       <if test="record.nodeProportion != null">
         node_proportion = #{record.nodeProportion,jdbcType=VARCHAR},
@@ -252,16 +252,16 @@
     set id = #{record.id,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
       node_rank = #{record.nodeRank,jdbcType=INTEGER},
-      current_stake = #{record.currentStake,jdbcType=VARCHAR},
+      current_stake = #{record.currentStake,jdbcType=BIGINT},
       progress = #{record.progress,jdbcType=VARCHAR},
       detail_url = #{record.detailUrl,jdbcType=VARCHAR},
-      node_index = #{record.nodeIndex,jdbcType=BIGINT},
+      node_index = #{record.nodeIndex,jdbcType=INTEGER},
       public_key = #{record.publicKey,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
       init_pos = #{record.initPos,jdbcType=BIGINT},
       total_pos = #{record.totalPos,jdbcType=BIGINT},
-      max_authorize = #{record.maxAuthorize,jdbcType=VARCHAR},
+      max_authorize = #{record.maxAuthorize,jdbcType=BIGINT},
       node_proportion = #{record.nodeProportion,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -277,7 +277,7 @@
         node_rank = #{nodeRank,jdbcType=INTEGER},
       </if>
       <if test="currentStake != null">
-        current_stake = #{currentStake,jdbcType=VARCHAR},
+        current_stake = #{currentStake,jdbcType=BIGINT},
       </if>
       <if test="progress != null">
         progress = #{progress,jdbcType=VARCHAR},
@@ -286,7 +286,7 @@
         detail_url = #{detailUrl,jdbcType=VARCHAR},
       </if>
       <if test="nodeIndex != null">
-        node_index = #{nodeIndex,jdbcType=BIGINT},
+        node_index = #{nodeIndex,jdbcType=INTEGER},
       </if>
       <if test="publicKey != null">
         public_key = #{publicKey,jdbcType=VARCHAR},
@@ -304,7 +304,7 @@
         total_pos = #{totalPos,jdbcType=BIGINT},
       </if>
       <if test="maxAuthorize != null">
-        max_authorize = #{maxAuthorize,jdbcType=VARCHAR},
+        max_authorize = #{maxAuthorize,jdbcType=BIGINT},
       </if>
       <if test="nodeProportion != null">
         node_proportion = #{nodeProportion,jdbcType=VARCHAR},

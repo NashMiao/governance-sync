@@ -3,14 +3,11 @@ package com.github.ontio.governancesync.mapper;
 import com.github.ontio.governancesync.model.NodeInfo;
 import com.github.ontio.governancesync.model.NodeInfoExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.ResultMap;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.session.RowBounds;
 
+@Mapper
 public interface NodeInfoMapper {
     long countByExample(NodeInfoExample example);
 
@@ -31,12 +28,12 @@ public interface NodeInfoMapper {
         "init_pos, total_pos, ",
         "max_authorize, node_proportion)",
         "values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, ",
-        "#{nodeRank,jdbcType=INTEGER}, #{currentStake,jdbcType=VARCHAR}, ",
+        "#{nodeRank,jdbcType=INTEGER}, #{currentStake,jdbcType=BIGINT}, ",
         "#{progress,jdbcType=VARCHAR}, #{detailUrl,jdbcType=VARCHAR}, ",
-        "#{nodeIndex,jdbcType=BIGINT}, #{publicKey,jdbcType=VARCHAR}, ",
+        "#{nodeIndex,jdbcType=INTEGER}, #{publicKey,jdbcType=VARCHAR}, ",
         "#{address,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, ",
         "#{initPos,jdbcType=BIGINT}, #{totalPos,jdbcType=BIGINT}, ",
-        "#{maxAuthorize,jdbcType=VARCHAR}, #{nodeProportion,jdbcType=VARCHAR})"
+        "#{maxAuthorize,jdbcType=BIGINT}, #{nodeProportion,jdbcType=VARCHAR})"
     })
     int insert(NodeInfo record);
 
@@ -66,16 +63,16 @@ public interface NodeInfoMapper {
         "update t_node_info",
         "set name = #{name,jdbcType=VARCHAR},",
           "node_rank = #{nodeRank,jdbcType=INTEGER},",
-          "current_stake = #{currentStake,jdbcType=VARCHAR},",
+          "current_stake = #{currentStake,jdbcType=BIGINT},",
           "progress = #{progress,jdbcType=VARCHAR},",
           "detail_url = #{detailUrl,jdbcType=VARCHAR},",
-          "node_index = #{nodeIndex,jdbcType=BIGINT},",
+          "node_index = #{nodeIndex,jdbcType=INTEGER},",
           "public_key = #{publicKey,jdbcType=VARCHAR},",
           "address = #{address,jdbcType=VARCHAR},",
           "status = #{status,jdbcType=INTEGER},",
           "init_pos = #{initPos,jdbcType=BIGINT},",
           "total_pos = #{totalPos,jdbcType=BIGINT},",
-          "max_authorize = #{maxAuthorize,jdbcType=VARCHAR},",
+          "max_authorize = #{maxAuthorize,jdbcType=BIGINT},",
           "node_proportion = #{nodeProportion,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=BIGINT}"
     })

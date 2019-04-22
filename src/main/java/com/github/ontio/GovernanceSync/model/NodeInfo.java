@@ -19,13 +19,13 @@ public class NodeInfo implements Serializable {
 
     private Integer nodeRank;
 
-    private String currentStake;
+    private Long currentStake;
 
     private String progress;
 
     private String detailUrl;
 
-    private Long nodeIndex;
+    private Integer nodeIndex;
 
     private String publicKey;
 
@@ -37,7 +37,7 @@ public class NodeInfo implements Serializable {
 
     private Long totalPos;
 
-    private String maxAuthorize;
+    private Long maxAuthorize;
 
     private String nodeProportion;
 
@@ -46,13 +46,12 @@ public class NodeInfo implements Serializable {
     // Self-defined construct method.
     public NodeInfo(PeerPoolItem item) {
         name = "";
-        nodeIndex = (long) item.index;
+        nodeIndex = item.index;
         publicKey = item.peerPubkey;
         address = item.address.toBase58();
         status = item.status;
         initPos = item.initPos;
         totalPos = item.totalPos;
-        maxAuthorize = "";
         nodeProportion = "";
     }
 }

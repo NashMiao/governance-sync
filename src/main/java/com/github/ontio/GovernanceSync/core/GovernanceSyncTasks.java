@@ -54,7 +54,7 @@ public class GovernanceSyncTasks {
                 String result = ontSdk.nativevm().governance().getPeerAttributes(item.peerPubkey);
                 HashMap<String, Object> attribute = objectMapper.readValue(result, typeRef);
                 NodeInfo node = new NodeInfo(item);
-                node.setMaxAuthorize(attribute.get("maxAuthorize").toString());
+                node.setMaxAuthorize(Long.parseLong(attribute.get("maxAuthorize").toString()));
                 node.setNodeProportion((100 - (int) attribute.get("t1PeerCost")) + "%");
                 nodes.add(node);
             }
@@ -76,7 +76,7 @@ public class GovernanceSyncTasks {
             node.setNodeRank(i + 1);
             BigDecimal currentPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getTotalPos()));
             BigDecimal targetPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getMaxAuthorize()));
-            node.setCurrentStake(currentPos.toString());
+            node.setCurrentStake(currentPos.longValue());
             node.setProgress(currentPos.multiply(new BigDecimal(100)).divide(targetPos, 2, RoundingMode.HALF_UP) + "%");
             node.setDetailUrl(paramsConfig.DETAIL_URL + node.getPublicKey());
             nodes.set(i, node);

@@ -304,62 +304,52 @@ public class NodeInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeEqualTo(String value) {
+        public Criteria andCurrentStakeEqualTo(Long value) {
             addCriterion("current_stake =", value, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeNotEqualTo(String value) {
+        public Criteria andCurrentStakeNotEqualTo(Long value) {
             addCriterion("current_stake <>", value, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeGreaterThan(String value) {
+        public Criteria andCurrentStakeGreaterThan(Long value) {
             addCriterion("current_stake >", value, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeGreaterThanOrEqualTo(String value) {
+        public Criteria andCurrentStakeGreaterThanOrEqualTo(Long value) {
             addCriterion("current_stake >=", value, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeLessThan(String value) {
+        public Criteria andCurrentStakeLessThan(Long value) {
             addCriterion("current_stake <", value, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeLessThanOrEqualTo(String value) {
+        public Criteria andCurrentStakeLessThanOrEqualTo(Long value) {
             addCriterion("current_stake <=", value, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeLike(String value) {
-            addCriterion("current_stake like", value, "currentStake");
-            return (Criteria) this;
-        }
-
-        public Criteria andCurrentStakeNotLike(String value) {
-            addCriterion("current_stake not like", value, "currentStake");
-            return (Criteria) this;
-        }
-
-        public Criteria andCurrentStakeIn(List<String> values) {
+        public Criteria andCurrentStakeIn(List<Long> values) {
             addCriterion("current_stake in", values, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeNotIn(List<String> values) {
+        public Criteria andCurrentStakeNotIn(List<Long> values) {
             addCriterion("current_stake not in", values, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeBetween(String value1, String value2) {
+        public Criteria andCurrentStakeBetween(Long value1, Long value2) {
             addCriterion("current_stake between", value1, value2, "currentStake");
             return (Criteria) this;
         }
 
-        public Criteria andCurrentStakeNotBetween(String value1, String value2) {
+        public Criteria andCurrentStakeNotBetween(Long value1, Long value2) {
             addCriterion("current_stake not between", value1, value2, "currentStake");
             return (Criteria) this;
         }
@@ -514,52 +504,52 @@ public class NodeInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexEqualTo(Long value) {
+        public Criteria andNodeIndexEqualTo(Integer value) {
             addCriterion("node_index =", value, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexNotEqualTo(Long value) {
+        public Criteria andNodeIndexNotEqualTo(Integer value) {
             addCriterion("node_index <>", value, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexGreaterThan(Long value) {
+        public Criteria andNodeIndexGreaterThan(Integer value) {
             addCriterion("node_index >", value, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexGreaterThanOrEqualTo(Long value) {
+        public Criteria andNodeIndexGreaterThanOrEqualTo(Integer value) {
             addCriterion("node_index >=", value, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexLessThan(Long value) {
+        public Criteria andNodeIndexLessThan(Integer value) {
             addCriterion("node_index <", value, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexLessThanOrEqualTo(Long value) {
+        public Criteria andNodeIndexLessThanOrEqualTo(Integer value) {
             addCriterion("node_index <=", value, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexIn(List<Long> values) {
+        public Criteria andNodeIndexIn(List<Integer> values) {
             addCriterion("node_index in", values, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexNotIn(List<Long> values) {
+        public Criteria andNodeIndexNotIn(List<Integer> values) {
             addCriterion("node_index not in", values, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexBetween(Long value1, Long value2) {
+        public Criteria andNodeIndexBetween(Integer value1, Integer value2) {
             addCriterion("node_index between", value1, value2, "nodeIndex");
             return (Criteria) this;
         }
 
-        public Criteria andNodeIndexNotBetween(Long value1, Long value2) {
+        public Criteria andNodeIndexNotBetween(Integer value1, Integer value2) {
             addCriterion("node_index not between", value1, value2, "nodeIndex");
             return (Criteria) this;
         }
@@ -894,62 +884,52 @@ public class NodeInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeEqualTo(String value) {
+        public Criteria andMaxAuthorizeEqualTo(Long value) {
             addCriterion("max_authorize =", value, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeNotEqualTo(String value) {
+        public Criteria andMaxAuthorizeNotEqualTo(Long value) {
             addCriterion("max_authorize <>", value, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeGreaterThan(String value) {
+        public Criteria andMaxAuthorizeGreaterThan(Long value) {
             addCriterion("max_authorize >", value, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeGreaterThanOrEqualTo(String value) {
+        public Criteria andMaxAuthorizeGreaterThanOrEqualTo(Long value) {
             addCriterion("max_authorize >=", value, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeLessThan(String value) {
+        public Criteria andMaxAuthorizeLessThan(Long value) {
             addCriterion("max_authorize <", value, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeLessThanOrEqualTo(String value) {
+        public Criteria andMaxAuthorizeLessThanOrEqualTo(Long value) {
             addCriterion("max_authorize <=", value, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeLike(String value) {
-            addCriterion("max_authorize like", value, "maxAuthorize");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaxAuthorizeNotLike(String value) {
-            addCriterion("max_authorize not like", value, "maxAuthorize");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaxAuthorizeIn(List<String> values) {
+        public Criteria andMaxAuthorizeIn(List<Long> values) {
             addCriterion("max_authorize in", values, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeNotIn(List<String> values) {
+        public Criteria andMaxAuthorizeNotIn(List<Long> values) {
             addCriterion("max_authorize not in", values, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeBetween(String value1, String value2) {
+        public Criteria andMaxAuthorizeBetween(Long value1, Long value2) {
             addCriterion("max_authorize between", value1, value2, "maxAuthorize");
             return (Criteria) this;
         }
 
-        public Criteria andMaxAuthorizeNotBetween(String value1, String value2) {
+        public Criteria andMaxAuthorizeNotBetween(Long value1, Long value2) {
             addCriterion("max_authorize not between", value1, value2, "maxAuthorize");
             return (Criteria) this;
         }
