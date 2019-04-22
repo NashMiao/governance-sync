@@ -234,6 +234,276 @@ public class NodeInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andNodeRankIsNull() {
+            addCriterion("node_rank is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankIsNotNull() {
+            addCriterion("node_rank is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankEqualTo(Integer value) {
+            addCriterion("node_rank =", value, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankNotEqualTo(Integer value) {
+            addCriterion("node_rank <>", value, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankGreaterThan(Integer value) {
+            addCriterion("node_rank >", value, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankGreaterThanOrEqualTo(Integer value) {
+            addCriterion("node_rank >=", value, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankLessThan(Integer value) {
+            addCriterion("node_rank <", value, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankLessThanOrEqualTo(Integer value) {
+            addCriterion("node_rank <=", value, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankIn(List<Integer> values) {
+            addCriterion("node_rank in", values, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankNotIn(List<Integer> values) {
+            addCriterion("node_rank not in", values, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankBetween(Integer value1, Integer value2) {
+            addCriterion("node_rank between", value1, value2, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andNodeRankNotBetween(Integer value1, Integer value2) {
+            addCriterion("node_rank not between", value1, value2, "nodeRank");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeIsNull() {
+            addCriterion("current_stake is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeIsNotNull() {
+            addCriterion("current_stake is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeEqualTo(String value) {
+            addCriterion("current_stake =", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeNotEqualTo(String value) {
+            addCriterion("current_stake <>", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeGreaterThan(String value) {
+            addCriterion("current_stake >", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeGreaterThanOrEqualTo(String value) {
+            addCriterion("current_stake >=", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeLessThan(String value) {
+            addCriterion("current_stake <", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeLessThanOrEqualTo(String value) {
+            addCriterion("current_stake <=", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeLike(String value) {
+            addCriterion("current_stake like", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeNotLike(String value) {
+            addCriterion("current_stake not like", value, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeIn(List<String> values) {
+            addCriterion("current_stake in", values, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeNotIn(List<String> values) {
+            addCriterion("current_stake not in", values, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeBetween(String value1, String value2) {
+            addCriterion("current_stake between", value1, value2, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentStakeNotBetween(String value1, String value2) {
+            addCriterion("current_stake not between", value1, value2, "currentStake");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressIsNull() {
+            addCriterion("progress is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressIsNotNull() {
+            addCriterion("progress is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressEqualTo(String value) {
+            addCriterion("progress =", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressNotEqualTo(String value) {
+            addCriterion("progress <>", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressGreaterThan(String value) {
+            addCriterion("progress >", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressGreaterThanOrEqualTo(String value) {
+            addCriterion("progress >=", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressLessThan(String value) {
+            addCriterion("progress <", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressLessThanOrEqualTo(String value) {
+            addCriterion("progress <=", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressLike(String value) {
+            addCriterion("progress like", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressNotLike(String value) {
+            addCriterion("progress not like", value, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressIn(List<String> values) {
+            addCriterion("progress in", values, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressNotIn(List<String> values) {
+            addCriterion("progress not in", values, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressBetween(String value1, String value2) {
+            addCriterion("progress between", value1, value2, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressNotBetween(String value1, String value2) {
+            addCriterion("progress not between", value1, value2, "progress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlIsNull() {
+            addCriterion("detail_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlIsNotNull() {
+            addCriterion("detail_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlEqualTo(String value) {
+            addCriterion("detail_url =", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlNotEqualTo(String value) {
+            addCriterion("detail_url <>", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlGreaterThan(String value) {
+            addCriterion("detail_url >", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("detail_url >=", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlLessThan(String value) {
+            addCriterion("detail_url <", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlLessThanOrEqualTo(String value) {
+            addCriterion("detail_url <=", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlLike(String value) {
+            addCriterion("detail_url like", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlNotLike(String value) {
+            addCriterion("detail_url not like", value, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlIn(List<String> values) {
+            addCriterion("detail_url in", values, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlNotIn(List<String> values) {
+            addCriterion("detail_url not in", values, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlBetween(String value1, String value2) {
+            addCriterion("detail_url between", value1, value2, "detailUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andDetailUrlNotBetween(String value1, String value2) {
+            addCriterion("detail_url not between", value1, value2, "detailUrl");
+            return (Criteria) this;
+        }
+
         public Criteria andNodeIndexIsNull() {
             addCriterion("node_index is null");
             return (Criteria) this;

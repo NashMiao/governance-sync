@@ -20,8 +20,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
 
-import static java.util.stream.IntStream.range;
-
 
 @Slf4j
 @Component
@@ -61,8 +59,8 @@ public class GovernanceSyncTasks {
                 nodes.add(node);
             }
             nodes.sort((v1, v2) -> Long.compare(v2.getInitPos() + v2.getTotalPos(), v1.getInitPos() + v1.getTotalPos()));
-            calcNodeInfo(nodes);
-            matchNodeName(nodes);
+            Vector<NodeInfo> nodeInfos = calcNodeInfo(nodes);
+            nodes = matchNodeName(nodeInfos);
             updateNodesTable(nodes);
         } catch (Exception e) {
             log.error("getPeerPoolMap failed: {}", e.getMessage());
@@ -71,16 +69,18 @@ public class GovernanceSyncTasks {
         }
     }
 
-    private void calcNodeInfo(Vector<NodeInfo> nodes) {
+    private Vector<NodeInfo> calcNodeInfo(Vector<NodeInfo> nodes) {
         for (int i = 0; i < nodes.size(); i++) {
             NodeInfo node = nodes.get(i);
-            node.setRank(i + 1);
+            node.setNodeRank(i + 1);
             BigDecimal currentPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getTotalPos()));
             BigDecimal targetPos = new BigDecimal(node.getInitPos()).add(new BigDecimal(node.getMaxAuthorize()));
             node.setCurrentStake(currentPos.toString());
-            node.setProgress(currentPos.divide(targetPos, RoundingMode.DOWN).toString() + "%s");
+            node.setProgress(currentPos.divide(targetPos, RoundingMode.DOWN).toString() + "%");
             node.setDetailUrl(paramsConfig.DETAIL_URL + node.getPublicKey());
+            nodes.set(i, node);
         }
+        return nodes;
     }
 
     private void changeMainNetNode() {
@@ -102,7 +102,7 @@ public class GovernanceSyncTasks {
         log.info("updateNodesTable: insert {} nodes info.", nodes.size());
     }
 
-    private void matchNodeName(Vector<NodeInfo> nodeInfos) {
+    private Vector<NodeInfo> matchNodeName(Vector<NodeInfo> nodeInfos) {
         RestTemplate restTemplate = new RestTemplate();
         QueryResult result = restTemplate.getForObject(paramsConfig.CANDIDATE_INFO, QueryResult.class);
         TypeReference<Vector<Candidate>> typeRef = new TypeReference<Vector<Candidate>>() {
@@ -122,5 +122,6 @@ public class GovernanceSyncTasks {
             }
             i++;
         }
+        return nodeInfos;
     }
 }

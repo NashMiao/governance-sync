@@ -4,6 +4,10 @@
   <resultMap id="BaseResultMap" type="com.github.ontio.governancesync.model.NodeInfo">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="node_rank" jdbcType="INTEGER" property="nodeRank" />
+    <result column="current_stake" jdbcType="VARCHAR" property="currentStake" />
+    <result column="progress" jdbcType="VARCHAR" property="progress" />
+    <result column="detail_url" jdbcType="VARCHAR" property="detailUrl" />
     <result column="node_index" jdbcType="BIGINT" property="nodeIndex" />
     <result column="public_key" jdbcType="VARCHAR" property="publicKey" />
     <result column="address" jdbcType="VARCHAR" property="address" />
@@ -72,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, node_index, public_key, address, status, init_pos, total_pos, max_authorize, 
-    node_proportion
+    id, name, node_rank, current_stake, progress, detail_url, node_index, public_key, 
+    address, status, init_pos, total_pos, max_authorize, node_proportion
   </sql>
   <select id="selectByExample" parameterType="com.github.ontio.governancesync.model.NodeInfoExample" resultMap="BaseResultMap">
     select
@@ -104,6 +108,18 @@
       </if>
       <if test="name != null">
         name,
+      </if>
+      <if test="nodeRank != null">
+        node_rank,
+      </if>
+      <if test="currentStake != null">
+        current_stake,
+      </if>
+      <if test="progress != null">
+        progress,
+      </if>
+      <if test="detailUrl != null">
+        detail_url,
       </if>
       <if test="nodeIndex != null">
         node_index,
@@ -136,6 +152,18 @@
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeRank != null">
+        #{nodeRank,jdbcType=INTEGER},
+      </if>
+      <if test="currentStake != null">
+        #{currentStake,jdbcType=VARCHAR},
+      </if>
+      <if test="progress != null">
+        #{progress,jdbcType=VARCHAR},
+      </if>
+      <if test="detailUrl != null">
+        #{detailUrl,jdbcType=VARCHAR},
       </if>
       <if test="nodeIndex != null">
         #{nodeIndex,jdbcType=BIGINT},
@@ -178,6 +206,18 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
+      <if test="record.nodeRank != null">
+        node_rank = #{record.nodeRank,jdbcType=INTEGER},
+      </if>
+      <if test="record.currentStake != null">
+        current_stake = #{record.currentStake,jdbcType=VARCHAR},
+      </if>
+      <if test="record.progress != null">
+        progress = #{record.progress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detailUrl != null">
+        detail_url = #{record.detailUrl,jdbcType=VARCHAR},
+      </if>
       <if test="record.nodeIndex != null">
         node_index = #{record.nodeIndex,jdbcType=BIGINT},
       </if>
@@ -211,6 +251,10 @@
     update t_node_info
     set id = #{record.id,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
+      node_rank = #{record.nodeRank,jdbcType=INTEGER},
+      current_stake = #{record.currentStake,jdbcType=VARCHAR},
+      progress = #{record.progress,jdbcType=VARCHAR},
+      detail_url = #{record.detailUrl,jdbcType=VARCHAR},
       node_index = #{record.nodeIndex,jdbcType=BIGINT},
       public_key = #{record.publicKey,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
@@ -228,6 +272,18 @@
     <set>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeRank != null">
+        node_rank = #{nodeRank,jdbcType=INTEGER},
+      </if>
+      <if test="currentStake != null">
+        current_stake = #{currentStake,jdbcType=VARCHAR},
+      </if>
+      <if test="progress != null">
+        progress = #{progress,jdbcType=VARCHAR},
+      </if>
+      <if test="detailUrl != null">
+        detail_url = #{detailUrl,jdbcType=VARCHAR},
       </if>
       <if test="nodeIndex != null">
         node_index = #{nodeIndex,jdbcType=BIGINT},
